@@ -16,15 +16,23 @@
              routerLinkActive="active"
              routerLink="books">Livres</a>
         </li>
-        <li class="nav-item">
+      </ul>
+
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item" *ngIf="!isAuth">
           <a class="nav-link"
              routerLinkActive="active"
              routerLink="auth/signup">Créer un compte</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isAuth">
           <a class="nav-link"
              routerLinkActive="active"
              routerLink="auth/signin">Se connecter</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isAuth"
+             style="cursor: pointer"
+             (click)="onSignOut()">Se déconnecter</a>
         </li>
       </ul>
     </div>
