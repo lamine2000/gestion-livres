@@ -1,6 +1,7 @@
 export class Book {
   constructor(
     public title: string,
-    public autor: string
+    public author: string,
+    public synopsis: string
   ){}
 }
