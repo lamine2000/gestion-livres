@@ -1,0 +1,18 @@
+.delete-btn{
+  background-color: orange;
+  padding: 0 5px 0 5px;
+  margin-left: 95%;
+  transition: ease-in, .75s;
+}
+
+.delete-btn:hover{
+  background-color: red;
+}
+
+.book{
+  transition: ease-in, .4s;
+}
+
+.book:hover{
+  background-color: #39c0ed;
+}
