@@ -43,3 +43,14 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#.spec.txs files
+/src/app/book-list/book-form/book-form.component.spec.ts
+/src/app/book-list/single-book/single-book.component.spec.ts
+/src/app/book-list/book-list.component.spec.ts
+/src/app/header/header.component.spec.ts
+/src/app/models/book.spec.ts
+/src/app/services/auth.service.spec.ts
+/src/app/services/auth-guard.service.spec.ts
+/src/app/services/books.service.spec.ts
+/src/app/app.component.spec.ts
