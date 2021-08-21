@@ -49,9 +49,36 @@ export class BooksService {
   }
 
   removeBook(book: Book){
+    if(book.photo !== ''){
+      const storageRef = firebase.default.storage().refFromURL(book.photo);
+      storageRef.delete().then(
+        () => { console.log('Suppression de la photo de '+ book.title+' réussie !') },
+        (error) => { console.log('Erreur de suppression de la photo de '+book.title+' : '+error); }
+      );
+    }
+
     const bookIndexToRemove = this.books.indexOf(book);
     this.books.splice(bookIndexToRemove, 1);
     this.saveBooks();
     this.emitBooks();
+  }
+
+  uploadFile(file: File){
+    return new Promise(
+      (resolve, reject) => {
+        const date = Date.now().toString();
+        const upload = firebase.default.storage().ref().child('images/'+date+file.name).put(file);
+        upload.on(
+          firebase.default.storage.TaskEvent.STATE_CHANGED,
+          () => { console.log('Chargement ...'); },
+          (error) => {
+            console.log('Erreur de chargement! ' + error);
+            reject();
+          },
+          () => { resolve(upload.snapshot.ref.getDownloadURL()); }
+        );
+
+      }
+    );
   }
 }
