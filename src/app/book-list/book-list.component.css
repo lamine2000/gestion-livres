@@ -16,3 +16,8 @@
 .book:hover{
   background-color: #39c0ed;
 }
+
+nav{
+  height: 50%;
+  width: 100%;
+}

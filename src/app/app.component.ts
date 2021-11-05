@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import * as firebase from 'firebase';
 
 @Component({
@@ -7,6 +7,8 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = "gestion-livres";
+
   constructor(){
     const config = {
       apiKey: "AIzaSyC1wTGnbPafL4Fx2xNdMs6iYQ0CBQ4gZUo",

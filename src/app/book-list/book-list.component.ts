@@ -1,9 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Book} from "../models/book";
-import {Subject, Subscription} from "rxjs";
+import {Subscription} from "rxjs";
 import {BooksService} from "../services/books.service";
 import {Router} from "@angular/router";
-import {SubjectSubscription} from "rxjs/internal-compatibility";
 
 @Component({
   selector: 'app-book-list',
